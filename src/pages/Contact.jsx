@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Contact = () => {
     return (
-        <div className="min-h-screen w-full bg-[#FAF9F6] pt-28 sm:pt-32 md:pt-40 px-6 sm:px-8 flex items-center justify-center selection:bg-black selection:text-white">
+        <div className="min-h-screen w-full bg-[#FAF9F6] pt-32 sm:pt-40 px-5 sm:px-8 flex items-center justify-center selection:bg-black selection:text-white">
             <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -14,11 +14,11 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
-                    className="text-4xl sm:text-6xl md:text-7xl font-light tracking-tighter mb-8 sm:mb-12 text-[#1A1A1A]"
+                    className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl font-light tracking-tighter mb-8 sm:mb-12 text-[#1A1A1A]"
                 >
                     Let's Connect
                 </motion.h1>
-                <div className="flex flex-col gap-6 sm:gap-8 text-lg sm:text-xl font-light tracking-[0.1em] sm:tracking-widest text-[#1A1A1A]/70">
+                <div className="flex flex-col gap-6 sm:gap-8 text-base xs:text-lg sm:text-xl font-light tracking-[0.1em] sm:tracking-widest text-[#1A1A1A]/70">
                     <motion.p 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
