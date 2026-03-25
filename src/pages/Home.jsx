@@ -55,8 +55,8 @@ const Home = () => {
         transition={{ duration: 1, delay: 1.4 }}
         className="absolute bottom-8 sm:bottom-12 right-6 sm:right-8 text-white z-10 text-right opacity-100 hidden xs:block"
       >
-        <p className="text-[8px] sm:text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.5em] font-light">
-          Structure & Space
+        <p className="text-xs sm:text-sm opacity-100 tracking-[0.1em] sm:tracking-widest">
+          website by <a href="https://guruwangchuk.me/" target="_blank" rel="noopener noreferrer" className="hover:underline">guru wangchuk</a>
         </p>
       </motion.div>
     </div>
