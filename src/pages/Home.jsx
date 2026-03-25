@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import mainPhoto from '../assets/mainphotodashboard/main.png';
+import mainPhoto from '../assets/mainphotodashboard/plain-black-desktop-2560-x-1440-ugpl0479gu0vuwnl.jpg';
 
 const Home = () => {
   return (

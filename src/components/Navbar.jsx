@@ -5,6 +5,9 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
+  const textColor = isHomePage ? 'text-white' : 'text-black';
+  const borderColor = isHomePage ? 'border-white' : 'border-black';
 
   const menuItems = [
     { label: 'Architecture', path: '/architecture' },
@@ -31,7 +34,7 @@ const Navbar = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="fixed top-0 w-full flex justify-between items-start p-6 md:p-8 z-50 text-white"
+        className={`fixed top-0 w-full flex justify-between items-start p-6 md:p-8 z-50 ${textColor}`}
       >
         <div className="relative cursor-default shrink-0">
           <h1
@@ -40,7 +43,7 @@ const Navbar = () => {
           >
             <Link
               to="/"
-              className="text-white hover:opacity-100 transition-opacity"
+              className={`${textColor} hover:opacity-100 transition-opacity`}
               onClick={(e) => {
                 // If it's already home, just close the menu. 
                 // Otherwise navigate and home will be rendered.
@@ -79,7 +82,7 @@ const Navbar = () => {
               >
                 <Link
                   to={item.path}
-                  className="text-xs sm:text-sm md:text-base tracking-widest font-light text-white cursor-pointer hover:opacity-60 transition-opacity whitespace-nowrap"
+                  className={`text-xs sm:text-sm md:text-base tracking-widest font-light ${textColor} cursor-pointer hover:opacity-60 transition-opacity whitespace-nowrap`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -96,7 +99,7 @@ const Navbar = () => {
               <li key={item.name} className="hover:opacity-60 cursor-pointer transition-opacity whitespace-nowrap">
                 <Link
                   to={item.path}
-                  className={`text-white transition-all hover:opacity-60 ${location.pathname === item.path ? 'border-b border-white pb-1' : ''}`}
+                  className={`${textColor} transition-all hover:opacity-60 ${location.pathname === item.path ? `border-b ${borderColor} pb-1` : ''}`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
