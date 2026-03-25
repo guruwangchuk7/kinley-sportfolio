@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import mainPhoto from '../assets/mainphotodashboard/main.jpg';
+import mainPhoto from '../assets/mainphotodashboard/main.png';
 
 const Home = () => {
   return (
@@ -15,9 +15,9 @@ const Home = () => {
         <img
           src={mainPhoto}
           alt="Architectural Project"
-          className="h-full w-full object-cover brightness-75 grayscale"
+          className="h-full w-full object-cover object-top brightness-50 grayscale scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-bg/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
       </motion.div>
 
       {/* Hero Content */}
@@ -26,7 +26,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] opacity-100 font-light"
+          className="text-[10px] sm:text-xs text-white uppercase tracking-[0.2em] sm:tracking-[0.3em] opacity-100 font-light"
         >
           Selected Works
         </motion.p>
@@ -42,7 +42,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="text-xs sm:text-sm mt-2 opacity-100 tracking-[0.1em] sm:tracking-widest"
+          className="text-xs sm:text-sm text-white mt-2 opacity-100 tracking-[0.1em] sm:tracking-widest"
         >
           Thimphu, Bhutan
         </motion.p>
@@ -55,8 +55,8 @@ const Home = () => {
         transition={{ duration: 1, delay: 1.4 }}
         className="absolute bottom-8 sm:bottom-12 right-6 sm:right-8 text-white z-10 text-right opacity-100 hidden xs:block"
       >
-        <p className="text-xs sm:text-sm opacity-100 tracking-[0.1em] sm:tracking-widest">
-          website by <a href="https://guruwangchuk.me/" target="_blank" rel="noopener noreferrer" className="hover:underline">guru wangchuk</a>
+        <p className="text-xs sm:text-sm text-white opacity-100 tracking-[0.1em] sm:tracking-widest">
+          website by <a href="https://guruwangchuk.me/" target="_blank" rel="noopener noreferrer" className="text-white hover:underline transition-all">guru wangchuk</a>
         </p>
       </motion.div>
     </div>

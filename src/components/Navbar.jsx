@@ -31,7 +31,7 @@ const Navbar = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="fixed top-0 w-full flex justify-between items-start p-6 md:p-8 z-50 text-white mix-blend-difference"
+        className="fixed top-0 w-full flex justify-between items-start p-6 md:p-8 z-50 text-white"
       >
         <div className="relative cursor-default shrink-0">
           <h1
@@ -40,6 +40,7 @@ const Navbar = () => {
           >
             <Link
               to="/"
+              className="text-white hover:opacity-100 transition-opacity"
               onClick={(e) => {
                 // If it's already home, just close the menu. 
                 // Otherwise navigate and home will be rendered.
@@ -95,7 +96,7 @@ const Navbar = () => {
               <li key={item.name} className="hover:opacity-60 cursor-pointer transition-opacity whitespace-nowrap">
                 <Link
                   to={item.path}
-                  className={`${location.pathname === item.path ? 'border-b border-white pb-1' : ''}`}
+                  className={`text-white transition-all hover:opacity-60 ${location.pathname === item.path ? 'border-b border-white pb-1' : ''}`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
