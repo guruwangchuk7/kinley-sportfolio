@@ -8,15 +8,12 @@ const Navbar = () => {
 
   const menuItems = [
     { label: 'Architecture', path: '/architecture' },
-    { label: 'Design', path: '/design' },
     { label: 'Journal', path: '/journal' },
-    { label: 'Office', path: '/office' },
     { label: 'About Me', path: '/about' }
   ];
 
   const topNavItems = [
-    { name: 'WORKS', path: '/works' },
-    { name: 'ARCHIVE', path: '/archive' },
+    { name: 'WORKS', path: '/architecture' },
     { name: 'CONTACT', path: '/contact' }
   ];
 
@@ -24,25 +21,25 @@ const Navbar = () => {
     <>
       {/* Backdrop for closing side menu when clicking outside */}
       {isOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-40"
           onClick={() => setIsOpen(false)}
         />
       )}
 
-      <motion.nav 
+      <motion.nav
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
         className="fixed top-0 w-full flex justify-between items-start p-6 md:p-8 z-50 text-white mix-blend-difference"
       >
         <div className="relative cursor-default">
-          <h1 
+          <h1
             className="text-xl md:text-2xl tracking-[0.2em] font-light cursor-pointer hover:opacity-100 transition-opacity"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               onClick={(e) => {
                 // If it's already home, just close the menu. 
                 // Otherwise navigate and home will be rendered.
@@ -52,8 +49,8 @@ const Navbar = () => {
               KINLEY WANGDI
             </Link>
           </h1>
-          
-          <motion.ul 
+
+          <motion.ul
             initial="hidden"
             animate={isOpen ? "visible" : "hidden"}
             variants={{
@@ -71,7 +68,7 @@ const Navbar = () => {
             className="absolute top-full left-0 mt-6 flex flex-col gap-4 pointer-events-auto"
           >
             {menuItems.map((item) => (
-              <motion.li 
+              <motion.li
                 key={item.label}
                 variants={{
                   visible: { opacity: 1, y: 0 },
@@ -79,7 +76,7 @@ const Navbar = () => {
                 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
-                <Link 
+                <Link
                   to={item.path}
                   className="text-sm md:text-base tracking-widest font-light text-white cursor-pointer hover:opacity-60 transition-opacity whitespace-nowrap"
                   onClick={() => setIsOpen(false)}
@@ -96,7 +93,7 @@ const Navbar = () => {
           <ul className="flex gap-6 md:gap-12 text-[10px] md:text-sm tracking-widest">
             {topNavItems.map((item) => (
               <li key={item.name} className="hover:opacity-60 cursor-pointer transition-opacity">
-                <Link 
+                <Link
                   to={item.path}
                   className={`${location.pathname === item.path ? 'border-b border-white pb-1' : ''}`}
                   onClick={() => setIsOpen(false)}

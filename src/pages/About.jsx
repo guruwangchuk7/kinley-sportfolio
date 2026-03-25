@@ -1,50 +1,111 @@
+import React from 'react';
+import { motion } from 'framer-motion';
 import myPhoto from '../assets/myphoto/kinley (b&w).png';
 
 const About = () => {
-    return (
-        <div className="min-h-screen w-full bg-primary-bg pt-40 px-8 pb-20">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
-                <motion.div 
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    <span className="text-xs uppercase tracking-[0.5em] text-soft-amber mb-4 block">The Architect</span>
-                    <h1 className="text-7xl font-light tracking-tighter mb-12 text-white">Kinley Wangdi</h1>
-                    <div className="space-y-6 text-lg font-light tracking-widest text-white/70 leading-relaxed">
-                        <p>
-                            Based in Bhutan, my practice is a continuous inquiry into the relationship between culture, climate, and the built environment. I believe architecture should be silent, allowing the context and light to speak.
-                        </p>
-                        <p>
-                            With a focus on sustainable Himalayan modernism, I combine traditional fabrication techniques with contemporary spatial logic to create structures that feel both timeless and necessary.
-                        </p>
-                    </div>
-                    
-                    <div className="mt-20 grid grid-cols-2 gap-8 border-t border-white/10 pt-12">
-                        <div>
-                            <h3 className="text-[10px] uppercase tracking-[0.4em] text-soft-amber mb-4">Philosophy</h3>
-                            <p className="text-sm font-light text-white/60">Sublime Minimalism</p>
-                        </div>
-                        <div>
-                            <h3 className="text-[10px] uppercase tracking-[0.4em] text-soft-amber mb-4">Focus</h3>
-                            <p className="text-sm font-light text-white/60">Himalayan Context</p>
-                        </div>
-                    </div>
-                </motion.div>
+    const fadeIn = {
+        initial: { opacity: 0, y: 20 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+    };
 
-                <motion.div 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1.5, ease: "easeOut" }}
-                    className="relative aspect-[3/4] bg-white/5 border border-white/10 overflow-hidden"
-                >
-                    <img 
-                        src={myPhoto} 
-                        alt="Kinley Wangdi" 
-                        className="w-full h-full object-cover grayscale brightness-90"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                </motion.div>
+    const staggerContainer = {
+        animate: {
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    return (
+        <div className="min-h-screen w-full bg-[#FAF9F6] pt-32 md:pt-48 pb-40 px-6 md:px-12 selection:bg-black selection:text-white">
+            <div className="max-w-7xl mx-auto">
+                {/* Hero Section */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-start">
+                    
+                    {/* Text Content */}
+                    <motion.div 
+                        variants={staggerContainer}
+                        initial="initial"
+                        animate="animate"
+                        className="lg:col-span-7 order-2 lg:order-1"
+                    >
+                        <motion.div variants={fadeIn} className="mb-12">
+                            <span className="text-[10px] md:text-xs uppercase tracking-[0.5em] text-[#1A1A1A]/40 mb-6 block font-medium">The Architect</span>
+                            <h1 className="text-6xl md:text-8xl font-light tracking-tighter text-[#1A1A1A] leading-[0.9] mb-8">
+                                Kinley <br /> Wangdi
+                            </h1>
+                            <div className="w-20 h-[1px] bg-[#1A1A1A]/20"></div>
+                        </motion.div>
+
+                        <motion.div variants={fadeIn} className="space-y-8 max-w-2xl text-lg md:text-xl font-light tracking-wide text-[#1A1A1A]/70 leading-relaxed italic">
+                            <p>
+                                "Architecture should be silent, allowing the context and light to speak."
+                            </p>
+                        </motion.div>
+
+                        <motion.div variants={fadeIn} className="mt-12 space-y-6 max-w-2xl text-base md:text-lg font-light tracking-widest text-[#1A1A1A]/60 leading-relaxed">
+                            <p>
+                                Based in Bhutan, my practice is a continuous inquiry into the relationship between culture, climate, and the built environment. I specialize in weaving traditional Bhutanese fabrication techniques with contemporary spatial logic.
+                            </p>
+                            <p>
+                                With a focus on sustainable Himalayan modernism, I create structures that feel both timeless and necessary—responding carefully to the site and its surrounding historical context.
+                            </p>
+                        </motion.div>
+
+                        {/* Expertise / Focus Grid */}
+                        <motion.div variants={fadeIn} className="mt-24 grid grid-cols-1 sm:grid-cols-2 gap-12 lg:gap-20 border-t border-[#1A1A1A]/10 pt-16">
+                            <div>
+                                <h3 className="text-[10px] uppercase tracking-[0.4em] text-[#1A1A1A]/30 mb-6 font-semibold">Specialization</h3>
+                                <ul className="space-y-3 text-sm tracking-widest text-[#1A1A1A]/60 font-light">
+                                    <li className="flex items-center gap-3">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]/10"></span>
+                                        BIM Modelling & Documentation
+                                    </li>
+                                    <li className="flex items-center gap-3">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]/10"></span>
+                                        Passive Climate Strategies
+                                    </li>
+                                    <li className="flex items-center gap-3">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]/10"></span>
+                                        Himalayan Vernacular Design
+                                    </li>
+                                    <li className="flex items-center gap-3">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]/10"></span>
+                                        Material Mass & mass timber
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 className="text-[10px] uppercase tracking-[0.4em] text-[#1A1A1A]/30 mb-6 font-semibold">Philosophy</h3>
+                                <p className="text-sm tracking-[0.2em] leading-relaxed text-[#1A1A1A]/60 font-light">
+                                    Sublime Minimalism: Pursuing architecture that evokes awe, reflection, and a deep emotional connection to memory.
+                                </p>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+
+                    {/* Image Section - Static as requested */}
+                    <div className="lg:col-span-5 order-1 lg:order-2">
+                        <div className="relative">
+                            <div className="aspect-[3/4] overflow-hidden bg-[#EFEFEF]">
+                                <img 
+                                    src={myPhoto} 
+                                    alt="Kinley Wangdi" 
+                                    className="w-full h-full object-cover grayscale brightness-95 contrast-[1.05]"
+                                />
+                            </div>
+                            {/* Decorative Frame Element */}
+                            <div className="absolute -bottom-6 -left-6 w-32 h-32 border-l border-b border-[#1A1A1A]/10 pointer-events-none"></div>
+                        </div>
+                        
+                        <div className="mt-8 flex justify-between items-center text-[10px] tracking-[0.5em] uppercase text-[#1A1A1A]/30">
+                            <span>Licensed Architect</span>
+                            <span>Thimphu, BT</span>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     );

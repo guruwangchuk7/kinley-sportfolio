@@ -20,14 +20,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/works" element={<Works />} />
         <Route path="/works/:id" element={<ProjectDetail />} />
-        <Route path="/archive" element={<Archive />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/architecture" element={<Architecture />} />
-        <Route path="/design" element={<Design />} />
         <Route path="/journal" element={<Journal />} />
-        <Route path="/office" element={<Office />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>
