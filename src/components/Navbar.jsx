@@ -33,9 +33,9 @@ const Navbar = () => {
         transition={{ duration: 1, delay: 0.5 }}
         className="fixed top-0 w-full flex justify-between items-start p-6 md:p-8 z-50 text-white mix-blend-difference"
       >
-        <div className="relative cursor-default">
+        <div className="relative cursor-default shrink-0">
           <h1
-            className="text-xl md:text-2xl tracking-[0.2em] font-light cursor-pointer hover:opacity-100 transition-opacity"
+            className="text-lg sm:text-xl md:text-2xl tracking-[0.15em] sm:tracking-[0.2em] font-light cursor-pointer hover:opacity-100 transition-opacity"
             onClick={() => setIsOpen(!isOpen)}
           >
             <Link
@@ -78,7 +78,7 @@ const Navbar = () => {
               >
                 <Link
                   to={item.path}
-                  className="text-sm md:text-base tracking-widest font-light text-white cursor-pointer hover:opacity-60 transition-opacity whitespace-nowrap"
+                  className="text-xs sm:text-sm md:text-base tracking-widest font-light text-white cursor-pointer hover:opacity-60 transition-opacity whitespace-nowrap"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -90,9 +90,9 @@ const Navbar = () => {
 
         {/* Only show top navigation if NOT on the architecture page to match requested ref image */}
         {location.pathname !== '/architecture' && (
-          <ul className="flex gap-6 md:gap-12 text-[10px] md:text-sm tracking-widest">
+          <ul className="flex gap-4 sm:gap-6 md:gap-12 text-[9px] sm:text-[10px] md:text-sm tracking-widest pt-1 sm:pt-1.5 md:pt-2">
             {topNavItems.map((item) => (
-              <li key={item.name} className="hover:opacity-60 cursor-pointer transition-opacity">
+              <li key={item.name} className="hover:opacity-60 cursor-pointer transition-opacity whitespace-nowrap">
                 <Link
                   to={item.path}
                   className={`${location.pathname === item.path ? 'border-b border-white pb-1' : ''}`}

@@ -6,6 +6,7 @@
   --color-secondary-bg: #1A1A1A;
   --color-off-white: #FFFFFF;
   --color-soft-amber: #BC9C7E;
+  --breakpoint-xs: 400px;
 }
 
 @layer base {

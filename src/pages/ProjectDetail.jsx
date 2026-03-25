@@ -15,40 +15,40 @@ const ProjectDetail = () => {
     );
 
     return (
-        <div className="min-h-screen w-full bg-[#FAF9F6] pt-40 px-8 pb-40 selection:bg-black selection:text-white">
+        <div className="min-h-screen w-full bg-[#FAF9F6] pt-28 sm:pt-32 md:pt-40 px-6 sm:px-8 pb-32 md:pb-40 selection:bg-black selection:text-white">
             <motion.div 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="max-w-6xl mx-auto"
             >
-                <Link to="/architecture" className="text-[10px] uppercase tracking-[0.5em] text-[#1A1A1A]/40 hover:text-black transition-colors mb-20 inline-block">
+                <Link to="/architecture" className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.5em] text-[#1A1A1A]/40 hover:text-black transition-colors mb-12 sm:mb-16 md:mb-20 inline-block font-light">
                     ← Back to Architecture
                 </Link>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 md:gap-20">
                     <motion.div 
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1 }}
                         className="flex flex-col"
                     >
-                        <div className="mb-12">
-                            <span className="text-[10px] uppercase tracking-[0.5em] text-[#1A1A1A]/40 mb-4 block">{project.category}</span>
-                            <h1 className="text-5xl md:text-7xl font-light tracking-tighter mb-4 text-[#1A1A1A] leading-[1.1]">{project.name}</h1>
-                            <p className="text-[10px] tracking-[0.5em] uppercase text-[#1A1A1A]/40">{project.location} — {project.year}</p>
+                        <div className="mb-8 md:mb-12">
+                            <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.5em] text-[#1A1A1A]/40 mb-3 sm:mb-4 block">{project.category}</span>
+                            <h1 className="text-3xl sm:text-5xl md:text-7xl font-light tracking-tighter mb-4 text-[#1A1A1A] leading-[1.1]">{project.name}</h1>
+                            <p className="text-[9px] md:text-[10px] tracking-[0.3em] md:tracking-[0.5em] uppercase text-[#1A1A1A]/40">{project.location} — {project.year}</p>
                         </div>
 
-                        <div className="space-y-12">
+                        <div className="space-y-10 md:space-y-12">
                             <div>
-                                <h4 className="text-[10px] uppercase tracking-[0.4em] text-[#1A1A1A]/30 mb-4">Project Narrative</h4>
-                                <p className="text-lg md:text-xl font-light leading-relaxed text-[#1A1A1A]/70 tracking-wide font-sans">
+                                <h4 className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-[#1A1A1A]/30 mb-3 sm:mb-4 font-medium">Project Narrative</h4>
+                                <p className="text-base sm:text-lg md:text-xl font-light leading-relaxed text-[#1A1A1A]/70 tracking-wide font-sans">
                                     {project.narrative}
                                 </p>
                             </div>
 
-                            <div className="pt-12 border-t border-[#1A1A1A]/5">
-                                <h4 className="text-[10px] uppercase tracking-[0.4em] text-[#1A1A1A]/30 mb-4">Role & Contribution</h4>
-                                <p className="text-sm tracking-widest text-[#1A1A1A]/60 font-light italic">
+                            <div className="pt-8 md:pt-12 border-t border-[#1A1A1A]/5">
+                                <h4 className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-[#1A1A1A]/30 mb-3 sm:mb-4 font-medium">Role & Contribution</h4>
+                                <p className="text-xs sm:text-sm tracking-widest text-[#1A1A1A]/60 font-light italic">
                                     {project.role}
                                 </p>
                             </div>
@@ -59,7 +59,7 @@ const ProjectDetail = () => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
-                        className="aspect-[4/5] bg-black/5 overflow-hidden group shadow-2xl"
+                        className="aspect-[4/5] bg-black/5 overflow-hidden group shadow-xl md:shadow-2xl"
                     >
                         <img 
                             src={project.image} 
@@ -71,7 +71,7 @@ const ProjectDetail = () => {
 
                 {/* Additional Images / Plans if available */}
                 {(project.fullImage || project.masterPlanImage) && (
-                    <div className="mt-40 space-y-20">
+                    <div className="mt-24 sm:mt-32 md:mt-40 space-y-12 sm:space-y-16 md:space-y-20">
                         {project.fullImage && (
                             <motion.div 
                                 initial={{ opacity: 0, y: 50 }}
