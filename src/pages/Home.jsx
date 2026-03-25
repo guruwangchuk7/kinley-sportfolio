@@ -50,14 +50,6 @@ const Home = () => {
             <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-[7px] tracking-widest text-white/50">LEVEL: 01</span>
           </div>
         </motion.div>
-
-        {/* Framing Corner Element */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.1 }}
-          transition={{ delay: 2, duration: 2 }}
-          className="absolute top-32 right-[20%] w-32 h-[1px] bg-white hidden lg:block"
-        />
       </div>
 
       {/* Hero Content */}
@@ -79,7 +71,7 @@ const Home = () => {
         </motion.div>
       </div>
 
-      {/* Credits / Footer Contrast */}
+      {/* Credits */}
       <motion.div
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
