@@ -2,10 +2,10 @@
 
 @theme {
   --font-sans: "Inter", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
-  --color-primary-bg: #1A2533;
-  --color-secondary-bg: #121212;
-  --color-off-white: #FFFFFF;
-  --color-soft-amber: #FFD2A0;
+  --color-primary-bg: #0F0F0F;
+  --color-secondary-bg: #1A1A1A;
+  --color-off-white: #E6E6E6;
+  --color-soft-amber: #BC9C7E;
 }
 
 @layer base {
@@ -14,7 +14,7 @@
     color: var(--color-off-white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow: hidden;
+    overflow-x: hidden;
     font-family: var(--font-sans);
   }
 }
